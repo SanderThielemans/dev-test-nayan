@@ -28,7 +28,7 @@ export const _Newsletter = styled.div`
     form {
         display: flex;
         flex-wrap: nowrap;
-        max-width: 300px;
+        max-width: 400px;
         height: 3.5rem;
         margin-top: 2rem;
         
@@ -44,11 +44,13 @@ export const _Newsletter = styled.div`
         }
         
         button[type='submit'] {
+            display: block;
             background-color: #000000;
             outline: 0;
             border: 0;
             aspect-ratio: 1/1;
-            height: 100%;
+            height: 3.5rem;
+            width: 3.5rem;
             box-sizing: border-box;
             cursor: pointer;
 
@@ -68,5 +70,12 @@ export const _Newsletter = styled.div`
                 transform: rotate(360deg);
             }
         }
+    }
+
+    p.error {
+        color: red;
+        margin-top: 1.35rem;
+        font-size: 0.85rem;
+        text-align: center;
     }
 `
