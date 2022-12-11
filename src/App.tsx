@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Countdown } from './components/Countdown/Countdown';
+import { HeroBanner } from './components/HeroBanner/HeroBanner';
+import { Info } from './components/Info/Info';
+import { Newsletter } from './components/Newsletter/Newsletter';
+import { content } from './config/black-friday';
 
 function App() {
+  //const endDate = new Date("December 24, 2022 00:00:00");
+  const endDate = new Date("December 24, 2022 00:00:00");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeroBanner
+        title={content.hero.title}
+        subtitle={content.hero.subtitle}
+      >
+        <Countdown end={endDate} />
+      </HeroBanner>
+
+      <Info blocks={content.info} />
+
+      <Newsletter
+        title={content.newsletter.title}
+        description={content.newsletter.description}
+      />
     </div>
   );
 }
